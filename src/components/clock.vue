@@ -1,21 +1,16 @@
 <template>
     <div class="clock">
-          <li style="--i:1">1</li>
-          <li style="--i:2">2</li>
-          <li style="--i:3">3</li>
-          <li style="--i:4">4</li>
-          <li style="--i:5">5</li>
-          <li style="--i:6">6</li>
-          <li style="--i:7">7</li>
-          <li style="--i:8">8</li>
-          <li style="--i:9">9</li>
-          <li style="--i:10">10</li>
-          <li style="--i:11">11</li>
-          <li style="--i:12">12</li>
 
+        <ul>
+            <li v-for="num in 12" :key="num" :style="{transform: 'rotateZ('+(30*num)+'deg)'}" >
+              <div :style="{transform: 'rotateZ('+(-num*30)+'deg'}">
+                {{ num }}
+              </div>
+              </li>
+        </ul>
 
-          <div class="hand hr" style="--wid:0.5rem; --hght:5rem; --clr:rgb(238, 192, 244);" v-bind:style="{transform: hourRotate}"></div>
-          <div class="hand min" style="--wid:0.4rem; --hght:8rem; --clr:rgb(247, 84, 247);"  v-bind:style="{transform: minRotate}"></div>
+          <div class="hand hr" style="--wid:0.5rem; --hght:6rem; --clr:rgb(238, 192, 244);" v-bind:style="{transform: hourRotate}"></div>
+          <div class="hand min" style="--wid:0.4rem; --hght:9rem; --clr:rgb(247, 84, 247);"  v-bind:style="{transform: minRotate}"></div>
           <div class="hand sec" style="--wid:0.2rem; --hght:12rem; --clr:rgb(248, 155, 170);" v-bind:style="{transform: secRotate}"></div>
           
     </div>
@@ -89,8 +84,14 @@ export default {
     font-weight: bold;
     width: 100%;
     height: 100%;
-    transform: rotate(calc(30deg*var(--i)));
     font-family: 'Poppins', sans-serif;
+  }
+
+  ul {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
   }
 
   .clock::after {
@@ -111,14 +112,8 @@ export default {
     background-color: var(--clr);
     bottom: 51%;
     left: 50%;
-    /* transform: rotateZ(60deg); */
     transform-origin: bottom;
   }
 
-  /* .sec {
-    /* transition-property: transform;
-    transform-origin:bottom; */
-    /* bottom: 45%;
-  } */ 
 
 </style>
