@@ -24,4 +24,4 @@ npm run lint
 See [Configuration Reference](https://cli.vuejs.org/config/).
 
 <!-- Check this live demo -> -->
-https://hg2407.github.io/clock-vue/dist/
+https://hg2407.github.io/Clock-vue/dist/
